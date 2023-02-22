@@ -2,15 +2,15 @@
 CREATE TABLE departments (
 	
 	dept_no character varying,
-	dept_name character varying NOT NULL
+	dept_name character varying NOT NULL PRIMARY KEY
 
 );
 
 -- DROP TABLE IF EXISTS dept_emp CASCADE;
 CREATE TABLE dept_emp (
 	
-	emp_no integer,
-	dept_no character varying
+	emp_no integer NOT NULL PRIMARY KEY,
+	dept_no character varying NOT NULL PRIMARY KEY
 
 );
 
@@ -18,14 +18,14 @@ CREATE TABLE dept_emp (
 CREATE TABLE dept_manager (
 	
 	dept_no character varying,
-	emp_no integer
+	emp_no integer NOT NULL PRIMARY KEY
 
 );
 
 -- DROP TABLE IF EXISTS employees CASCADE;
 CREATE TABLE employees (
 	
-	emp_no integer,
+	emp_no integer NOT NULL PRIMARY KEY,
 	emp_title_id character varying,
 	birth_date date,
 	first_name character varying,
@@ -37,7 +37,7 @@ CREATE TABLE employees (
 -- DROP TABLE IF EXISTS salaries CASCADE;
 CREATE TABLE salaries (
 	
-	emp_no integer NOT NULL,
+	emp_no integer NOT NULL PRIMARY KEY,
 	salary integer
 
 );
@@ -45,7 +45,7 @@ CREATE TABLE salaries (
 -- DROP TABLE IF EXISTS titles CASCADE;
 CREATE TABLE titles (
 	
-	title_id character varying NOT NULL,
+	title_id character varying NOT NULL PRIMARY KEY,
 	title character varying NOT NULL
 
 );
