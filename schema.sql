@@ -1,20 +1,20 @@
--- DROP TABLE IF EXISTS public.departments CASCADE;
-CREATE TABLE public.departments (
+-- DROP TABLE IF EXISTS departments CASCADE;
+CREATE TABLE departments (
 	
 	dept_no character varying,
 	dept_name character varying NOT NULL
 
 );
 
--- DROP TABLE IF EXISTS public.dept_emp CASCADE;
-CREATE TABLE public.dept_emp (
+-- DROP TABLE IF EXISTS dept_emp CASCADE;
+CREATE TABLE dept_emp (
 	
 	emp_no integer,
 	dept_no character varying
 
 );
 
--- DROP TABLE IF EXISTS public.dept_manager CASCADE;
+-- DROP TABLE IF EXISTS dept_manager CASCADE;
 CREATE TABLE dept_manager (
 	
 	dept_no character varying,
