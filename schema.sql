@@ -1,51 +1,41 @@
--- DROP TABLE IF EXISTS departments CASCADE;
-CREATE TABLE departments (
-	
-	dept_no character varying,
-	dept_name character varying NOT NULL PRIMARY KEY
-
-);
-
--- DROP TABLE IF EXISTS dept_emp CASCADE;
-CREATE TABLE dept_emp (
-	
-	emp_no integer NOT NULL PRIMARY KEY,
-	dept_no character varying NOT NULL PRIMARY KEY
-
-);
-
--- DROP TABLE IF EXISTS dept_manager CASCADE;
-CREATE TABLE dept_manager (
-	
-	dept_no character varying,
-	emp_no integer NOT NULL PRIMARY KEY
-
-);
-
--- DROP TABLE IF EXISTS employees CASCADE;
 CREATE TABLE employees (
-	
-	emp_no integer NOT NULL PRIMARY KEY,
-	emp_title_id character varying,
-	birth_date date,
-	first_name character varying,
-	last_name character varying,
-	sex character(1),
-	hire_date date
-
-);
--- DROP TABLE IF EXISTS salaries CASCADE;
-CREATE TABLE salaries (
-	
-	emp_no integer NOT NULL PRIMARY KEY,
-	salary integer
-
+    emp_no integer NOT NULL PRIMARY KEY,
+    emp_title_id character varying(25) NOT NULL,
+    birth_date date NOT NULL,
+    first_name character varying(45) NOT NULL,
+    last_name character varying(45) NOT NULL,
+    sex character (1) NOT NULL,
+    hire_date date NOT NULL
 );
 
--- DROP TABLE IF EXISTS titles CASCADE;
 CREATE TABLE titles (
-	
-	title_id character varying NOT NULL PRIMARY KEY,
-	title character varying NOT NULL
-
+    title_id character varying(10) NOT NULL PRIMARY KEY,
+    FOREIGN KEY (title_id) REFERENCES employees (emp_title_id),
+    title character varying(25) NOT NULL
 );
+
+CREATE TABLE departments (
+    dept_no character varying(10) NOT NULL PRIMARY KEY,
+    dept_name character varying(50) NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE dept_emp (
+    emp_no integer NOT NULL PRIMARY KEY,
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+    dept_no character varying(10) NOT NULL PRIMARY KEY,
+    FOREIGN KEY (dept_no) REFERENCES departments (dept_no)
+);
+
+CREATE TABLE dept_manager (
+    dept_no character varying(25) NOT NULL,
+    FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
+    emp_no integer NOT NULL PRIMARY KEY,
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
+);
+
+CREATE TABLE salaries (
+    emp_no integer NOT NULL PRIMARY KEY,
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+    salary integer NOT NULL
+);
+
