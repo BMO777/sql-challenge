@@ -26,4 +26,4 @@ The queries.sql file uses sql code to satisfy the following queries to display:
 
 There are primary keys indicated on the schema file on overy table and a composite key for two tables, the department table, and the department employee table.
 
-![]https://github.com/BMO777/sql-challenge/blob/main/erd.png
+![](https://github.com/BMO777/sql-challenge/blob/main/erd.png)
