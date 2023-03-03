@@ -1,6 +1,7 @@
 CREATE TABLE employees (
     emp_no integer NOT NULL PRIMARY KEY,
     emp_title_id character varying(25) NOT NULL,
+    FOREIGN KEY (emp_title_id) REFERENCES titles(title_id)
     birth_date date NOT NULL,
     first_name character varying(45) NOT NULL,
     last_name character varying(45) NOT NULL,
