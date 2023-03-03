@@ -24,3 +24,4 @@ The queries.sql file uses sql code to satisfy the following queries to display:
 	-List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name). 
 
 
+There are primary keys indicated on the schema file on overy table and a composite key for two tables, the department table, and the department employee table.
