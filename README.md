@@ -1,8 +1,8 @@
 # sql-challenge
 
-Tables were created in a postgresql database using titles from csv files before creating the schema.sql file which may now be used to create tables where data from csv files may be imported.
+Tables were created in a postgresql database using titles from csv files in data folder before creating the schema.sql file which may now be used to create tables where data from csv files may be imported.
 
-Csv files in data folder were imported to postgresql database  appending to the tables referencing employees, titles, salaries, departments, department managers, and department employees.
+Csv files in aforementioned folder were imported to postgresql database  appending to the tables referencing employees, titles, salaries, departments, department managers, and department employees.
 
 
 The queries.sql file uses sql code to satisfy the following queries to display:
